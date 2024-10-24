@@ -1,6 +1,5 @@
-arquivo = open(
-    "/home/guilherme/Projetos/dio/codigo-fonte/trilha-python-dio/05 - Manipulação de arquivos/teste.txt", "w"
+arquivo = open("/Users/dacri/Documents/CRISTIANO/ACADÊMICO/DIO/trilha-python-dio-main/trilha-python-dio-main/05 - Manipulação de arquivos/teste.txt", "w"
 )
-arquivo.write("Escrevendo dados em um novo arquivo.")
-arquivo.writelines(["\n", "escrevendo", "\n", "um", "\n", "novo", "\n", "texto"])
+arquivo.write("Escrevendo no arquivo")
+arquivo.writelines("\nPulando" "\nlinhas" "\nvárias" "\nvezes""\ndiferente")
 arquivo.close()

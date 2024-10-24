@@ -1,29 +1,27 @@
-conta_normal = False
-conta_universitaria = False
-conta_especial = True
+def recomendar_plano(consumo_mensal):
+    """
+    Recomenda o plano de internet ideal com base no consumo médio mensal de dados.
 
-saldo = 2000
-saque = 1500
-cheque_especial = 450
+    Args:
+    consumo_mensal (float): Consumo médio mensal de dados em GB.
 
-if conta_normal:
-
-    if saldo >= saque:
-        print("Saque realizado com sucesso!")
-    elif saque <= (saldo + cheque_especial):
-        print("Saque realizado com uso do cheque especial!")
+    Returns:
+    str: Nome do plano recomendado.
+    """
+    if consumo_mensal <= 10:
+        return "Plano Essencial Fibra - 50Mbps: Recomendado para um consumo médio de até 10 GB."
+    elif consumo_mensal <= 20:
+        return "Plano Prata Fibra - 100Mbps: Recomendado para um consumo médio acima de 10 GB até 20 GB."
     else:
-        print("Não foi possivel realizar o saque, saldo insuficiente!")
+        return "Plano Premium Fibra - 300Mbps: Recomendado para um consumo médio acima de 20 GB."
 
-elif conta_universitaria:
+def main():
+    try:
+        consumo_mensal = float(input("Informe seu consumo médio mensal de dados (em GB): "))
+        plano_recomendado = recomendar_plano(consumo_mensal)
+        print(plano_recomendado)
+    except ValueError:
+        print("Por favor, insira um valor numérico válido para o consumo mensal.")
 
-    if saldo >= saque:
-        print("Saque realizado com sucesso!")
-    else:
-        print("Saldo insuficiente!")
-
-elif conta_especial:
-    print("Conta especial selecionada!")
-
-else:
-    print("Sistema não reconheceu seu tipo de conta, entre em contato com o seu gerente.")
+if __name__ == "__main__":
+    main()
